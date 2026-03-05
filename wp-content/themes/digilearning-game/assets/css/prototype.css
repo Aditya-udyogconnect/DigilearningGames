@@ -1,0 +1,75 @@
+:root {
+    --dg-bg: #020617;
+    --dg-card: #0f172a;
+    --dg-border: #1e293b;
+    --dg-text: #e2e8f0;
+    --dg-accent: #22c55e;
+    --dg-warn: #f97316;
+    --dg-muted: #94a3b8;
+}
+
+* { box-sizing: border-box; }
+
+body {
+    background: radial-gradient(circle at top, #0f172a, var(--dg-bg));
+    color: var(--dg-text);
+    font-family: Inter, Arial, sans-serif;
+    margin: 0;
+}
+
+.dg-shell { max-width: 1000px; margin: 2rem auto; padding: 0 1rem 2rem; }
+.dg-card {
+    background: rgba(15, 23, 42, 0.95);
+    border: 1px solid var(--dg-border);
+    border-radius: 14px;
+    padding: 1.25rem;
+    margin-bottom: 1rem;
+}
+
+.dg-hero h1 { margin-top: 0; }
+.dg-stats { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0.75rem; }
+.dg-stats div { background: #111827; border: 1px solid var(--dg-border); border-radius: 10px; padding: 0.75rem; }
+.dg-stats span { color: var(--dg-muted); display: block; font-size: 0.8rem; }
+.dg-stats strong { font-size: 1.1rem; }
+
+.dg-module-map { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.75rem; }
+.dg-module {
+    border: 1px solid var(--dg-border);
+    border-radius: 10px;
+    padding: 0.75rem;
+    background: #0b1220;
+}
+.dg-module h3 { margin: 0 0 0.35rem; font-size: 1rem; }
+.dg-module p { margin: 0 0 0.45rem; color: var(--dg-muted); font-size: 0.92rem; }
+.dg-module button { margin-top: 0.35rem; }
+
+.dg-state-passed { border-color: #166534; background: #052e16; }
+.dg-state-available { border-color: #1d4ed8; }
+.dg-state-locked { opacity: 0.65; }
+
+.dg-form { display: grid; gap: 0.7rem; max-width: 360px; }
+.dg-form input {
+    background: #020617;
+    border: 1px solid var(--dg-border);
+    border-radius: 8px;
+    color: var(--dg-text);
+    padding: 0.55rem;
+}
+
+.dg-button {
+    background: var(--dg-accent);
+    border: 0;
+    border-radius: 8px;
+    color: #052e16;
+    cursor: pointer;
+    font-weight: 700;
+    padding: 0.62rem 1rem;
+}
+.dg-button:disabled { cursor: not-allowed; opacity: 0.5; }
+
+.dg-result-pass { color: #4ade80; }
+.dg-result-fail { color: var(--dg-warn); }
+
+@media (max-width: 780px) {
+    .dg-stats, .dg-module-map { grid-template-columns: 1fr; }
+}
